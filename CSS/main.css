@@ -263,3 +263,32 @@ body {
   padding: 0;
   margin-right: 0;
   display: block; }
+
+.containerCart {
+  align: center;
+  width: 90%;
+  height: 300px;
+  margin-left: 60px;
+  margin-bottom: 10px;
+  border: 2px solid #7FBBE8;
+  border-radius: 5px 5px 5px 5px; }
+
+.selImage {
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 55%;
+  height: 85%;
+  border: 2px solid #7FBBE8; }
+
+.named, .numbers {
+  height: 100%; }
+
+.ItemSub, .Tax, .Total {
+  height: 30%;
+  border-bottom: 2px solid #7FBBE8; }
+
+.active {
+  background-color: #7FBBE8; }
+
+.active .shopping-cart {
+  color: white; }
