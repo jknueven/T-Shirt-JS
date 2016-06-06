@@ -53,7 +53,7 @@
 					</div>
 				</div>
 				
-				<div class="subbox"><i class="fa fa-shopping-cart"></i></div>
+				<div onClick="addToCartBlue(29)" class="subbox"><i class="fa fa-shopping-cart"></i></div>
 
 			</div>
 
@@ -171,39 +171,37 @@
 </div>
 
 <div class="containerCart">
-	<div class="col-lg-7 selImage">
 
-	</div>
-
-	<div class="col-lg-3 named">
+	<div class="col-md-7 named">
 		<div class="row ItemSub">
-
+		<h2>Subtotal </h2>
 		</div>
 
 		<div class="row Tax">
-		<h1>Tax</h1>
+		<h2>Tax</h2>
 		</div>
 
 		<div class="row Total">
-		<h1>Total</h1>
+		<h2>Total</h2>
 		</div>
 
 	</div>
 
-	<div class="col-lg-2 numbers">
+	<div class="col-md-5 numbers">
 		<div class="row ItemSub">
-
+		<h2 id="subtotalBox"> </h2>
 		</div>
 
 		<div class="row Tax">
-
+		<h2> 6.5% </h2>
 		</div>
 
 		<div class="row Total">
-
+		<h2 id="totalinput"> </h2>
 		</div>
 
 	</div>
 	
 </div>
+<script src="js/main.js"></script>
 </body>

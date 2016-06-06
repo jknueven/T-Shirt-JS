@@ -313,9 +313,8 @@ body {
 }
 
 .containerCart {
-	align:center;
-	width:90%;
-	height:300px;
+	width:55%;
+	height:200px;
 	margin-left: 60px;
 	margin-bottom:10px;
 	border: 2px solid $primaryColor;
@@ -323,15 +322,17 @@ body {
 }
 
 .selImage {
-	margin-top:20px;
-	margin-left: 20px;
-	width:55%;
-	height:85%;
+	margin-top:50px;
+	margin-left: 10px;
+	border-radius: 5px;
+	width:200px;
+	height:200px;
 	border:2px solid $primaryColor;
 }
 
 .named, .numbers {
-	height:100%;
+	margin-top:10px;
+	height:90%;
 }
 
  .ItemSub, .Tax, .Total {
@@ -340,7 +341,7 @@ body {
 }
 
 .Tax, .Total h1 {
-
+	align-content:center;
 }
 
 .active {

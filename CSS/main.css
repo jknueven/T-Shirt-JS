@@ -7,6 +7,14 @@ h1 {
   color: #7FBBE8;
   margin-top: 3px; }
 
+h2 {
+  font-family: arial, sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  display: inline-block;
+  color: #7FBBE8; }
+
 p {
   font-family: arial, sans-serif;
   float: left;
@@ -265,27 +273,31 @@ body {
   display: block; }
 
 .containerCart {
-  align: center;
-  width: 90%;
-  height: 300px;
+  width: 55%;
+  height: 200px;
   margin-left: 60px;
   margin-bottom: 10px;
   border: 2px solid #7FBBE8;
   border-radius: 5px 5px 5px 5px; }
 
 .selImage {
-  margin-top: 20px;
-  margin-left: 20px;
-  width: 55%;
-  height: 85%;
+  margin-top: 50px;
+  margin-left: 10px;
+  border-radius: 5px;
+  width: 200px;
+  height: 200px;
   border: 2px solid #7FBBE8; }
 
 .named, .numbers {
-  height: 100%; }
+  margin-top: 10px;
+  height: 90%; }
 
 .ItemSub, .Tax, .Total {
   height: 30%;
   border-bottom: 2px solid #7FBBE8; }
+
+.Tax, .Total h1 {
+  align-content: center; }
 
 .active {
   background-color: #7FBBE8; }
