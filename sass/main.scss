@@ -129,6 +129,10 @@ body {
 	background-color:$primaryColor;
 }
 
+.subbox:active {
+	background-color:$primaryColor;
+}
+
 
 .flipbox {
 	width: 30px;
@@ -315,7 +319,7 @@ body {
 .containerCart {
 	width:55%;
 	height:200px;
-	margin-left: 60px;
+	margin-left: 55px;
 	margin-bottom:10px;
 	border: 2px solid $primaryColor;
 	border-radius: 5px 5px 5px 5px;
@@ -346,6 +350,10 @@ body {
 
 .active {
 	background-color:$primaryColor;
+}
+
+.active i {
+	color:white;
 }
 
 .active .shopping-cart {

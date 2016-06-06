@@ -123,6 +123,9 @@ body {
 .subbox a:hover {
   background-color: #7FBBE8; }
 
+.subbox:active {
+  background-color: #7FBBE8; }
+
 .flipbox {
   width: 30px;
   height: 30px;
@@ -275,7 +278,7 @@ body {
 .containerCart {
   width: 55%;
   height: 200px;
-  margin-left: 60px;
+  margin-left: 55px;
   margin-bottom: 10px;
   border: 2px solid #7FBBE8;
   border-radius: 5px 5px 5px 5px; }
@@ -301,6 +304,9 @@ body {
 
 .active {
   background-color: #7FBBE8; }
+
+.active i {
+  color: white; }
 
 .active .shopping-cart {
   color: white; }

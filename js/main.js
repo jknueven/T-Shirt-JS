@@ -10,18 +10,74 @@ var isOrangeClicked = false;
 
 var isPinkClicked = false;
 
+var isCartClicked = false;
+
 var subtotalBox = document.getElementById("subtotalBox");
 
 var totalinput = document.getElementById("totalinput");
+
+var cart1 = document.getElementById("cart1");
+
+var cart2 = document.getElementById("cart2");
+
+var cart3 = document.getElementById("cart3");
+
+
+
+cart1.addEventListener("click",function(){
+  if(isCartClicked == false)
+  {
+    cart1.className = 'active subbox';
+    isCartClicked = true;
+  }
+  else
+  {
+    cart1.className = 'subbox';
+    isCartClicked = false;
+  }
+
+})
+
+
+cart2.addEventListener("click",function(){
+  if(isCartClicked == false)
+  {
+    cart2.className = 'active subbox';
+    isCartClicked = true;
+  }
+  else
+  {
+    cart2.className = 'subbox';
+    isCartClicked = false;
+  }
+
+})
+
+
+cart3.addEventListener("click",function(){
+  if(isCartClicked == false)
+  {
+    cart3.className = 'active subbox';
+    isCartClicked = true;
+  }
+  else
+  {
+    cart3.className = 'subbox';
+    isCartClicked = false;
+  }
+
+})
 
 function addToCartBlue(price){
 
 	if (isBlueClicked === false) {
 	total = total + price;
+	cart = 'active';
 	isBlueClicked = true;
 	}
 	else {
 		total = total - price;
+		cart = 'unactive';
 		isBlueClicked = false;
 	}
 
