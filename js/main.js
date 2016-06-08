@@ -1,17 +1,3 @@
-var total = 0;
-
-var subtotal = 0;
-
-var tax = .065;
-
-var isBlueClicked = false;
-
-var isOrangeClicked = false;
-
-var isPinkClicked = false;
-
-var isCartClicked = false;
-
 var subtotalBox = document.getElementById("subtotalBox");
 
 var totalinput = document.getElementById("totalinput");
@@ -22,102 +8,118 @@ var cart2 = document.getElementById("cart2");
 
 var cart3 = document.getElementById("cart3");
 
-
-
-cart1.addEventListener("click",function(){
-  if(isCartClicked == false)
-  {
-    cart1.className = 'active subbox';
-    isCartClicked = true;
-  }
-  else
-  {
-    cart1.className = 'subbox';
-    isCartClicked = false;
-  }
-
-})
-
-
-cart2.addEventListener("click",function(){
-  if(isCartClicked == false)
-  {
-    cart2.className = 'active subbox';
-    isCartClicked = true;
-  }
-  else
-  {
-    cart2.className = 'subbox';
-    isCartClicked = false;
-  }
-
-})
-
-
-cart3.addEventListener("click",function(){
-  if(isCartClicked == false)
-  {
-    cart3.className = 'active subbox';
-    isCartClicked = true;
-  }
-  else
-  {
-    cart3.className = 'subbox';
-    isCartClicked = false;
-  }
-
-})
-
-function addToCartBlue(price){
-
-	if (isBlueClicked === false) {
-	total = total + price;
-	cart = 'active';
-	isBlueClicked = true;
-	}
-	else {
-		total = total - price;
-		cart = 'unactive';
-		isBlueClicked = false;
-	}
-
-	subtotalBox.innerHTML = total;
-	totalinput.innerHTML = calculateTotal();
+var pinkTeeShirt = {
+  color:'pink',
+  price:19,
+  inCart: false,
 }
 
-function addToCartPink(price){
-
-	if (isPinkClicked === false) {
-		total = total + price;
-		isPinkClicked = true;
-	}
-	else {
-		total = total - price;
-		isPinkClicked = false;
-	}
-
-	subtotalBox.innerHTML = total;
-	totalinput.innerHTML = calculateTotal();
+var blueTeeShirt = {
+  color:'blue',
+  price:29,
+  inCart: false,
 }
 
-function addToCartOrange(price){
-
-	if (isOrangeClicked === false){
-		total = total + price;
-		isOrangeClicked = true;
-	}
-	else {
-		total = total - price;
-		isOrangeClicked = false;
-	}
-
-	subtotalBox.innerHTML = total;
-	totalinput.innerHTML = calculateTotal()
+var orangeTeeShirt = {
+  color:'orange',
+  price:39,
+  inCart: false,
 }
 
+var cart = [];
 
-function calculateTotal() {
-	var finalTotal = total;
-	finalTotal = total * tax + total;
-	return finalTotal;
+function addToCart(color,price){
+  if (color === 'blue' && blueTeeShirt.inCart === false){
+  cart.push(blueTeeShirt);
+  cart1.className = 'active subbox';
+  blueTeeShirt.inCart = true;  
+  }
+  else if (color === 'blue' && blueTeeShirt.inCart === true){
+  var arrayLocation = cart.indexOf(blueTeeShirt);
+  cart.splice(arrayLocation,1);
+  cart1.className = 'subbox';
+  blueTeeShirt.inCart = false;  
+  }
+  else if (color === 'pink' && pinkTeeShirt.inCart ===false){
+  cart.push(pinkTeeShirt);
+  cart2.className = 'active subbox';
+  pinkTeeShirt.inCart = true;
+  }
+  else if (color === 'pink' && pinkTeeShirt.inCart === true){
+  var arrayLocation = cart.indexOf(pinkTeeShirt);
+  cart.splice(arrayLocation,1);
+  cart2.className = 'subbox';
+  pinkTeeShirt.inCart = false;  
+  }
+  else if (color === 'orange' && orangeTeeShirt.inCart === false){
+  cart.push(orangeTeeShirt);
+  cart3.className = 'active subbox';
+  orangeTeeShirt.inCart = true;
+  }
+  else if (color === 'orange' && orangeTeeShirt.inCart === true){
+  var arrayLocation = cart.indexOf(orangeTeeShirt);
+  cart.splice(arrayLocation,1);
+  cart3.className = 'subbox';
+  orangeTeeShirt.inCart = false;  
+  }
+ document.getElementById("subtotalBox").innerHTML = getSubTotal();
+ document.getElementById('totalinput').innerHTML = getTotal();
 }
+
+function getSubTotal(){
+  var subTotal = 0;
+  cart.forEach(function(shirt)
+  {
+    subTotal= shirt.price + subTotal;
+  });
+
+  return subTotal;
+}
+
+function getTotal(){
+  var subTotal = getSubTotal(); 
+  Total= subTotal * 0.065 + subTotal;
+  return Total; 
+}
+
+// cart1.addEventListener("click",function(){
+//   if(blueTeeShirt.inCart == false)
+//   {
+//     cart1.className = 'active subbox';
+//     isCartClicked = true;
+//   }
+//   else
+//   {
+//     cart1.className = 'subbox';
+//     isCartClicked = false;
+//   }
+
+// })
+
+// cart2.addEventListener("click",function(){
+//   if(isCartClicked == false)
+//   {
+//     cart2.className = 'active subbox';
+//     isCartClicked = true;
+//   }
+//   else
+//   {
+//     cart2.className = 'subbox';
+//     isCartClicked = false;
+//   }
+
+// })
+
+// cart3.addEventListener("click",function(){
+//   if(isCartClicked == false)
+//   {
+//     cart3.className = 'active subbox';
+//     isCartClicked = true;
+//   }
+//   else
+//   {
+//     cart3.className = 'subbox';
+//     isCartClicked = false;
+//   }
+
+// })
