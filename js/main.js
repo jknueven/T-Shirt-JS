@@ -1,3 +1,5 @@
+var activeItem = document.getElementById("activeItem");
+
 var subtotalBox = document.getElementById("subtotalBox");
 
 var totalinput = document.getElementById("totalinput");
@@ -11,18 +13,21 @@ var cart3 = document.getElementById("cart3");
 var pinkTeeShirt = {
   color:'pink',
   price:19,
+  title: 'Nature Lover',
   inCart: false,
 }
 
 var blueTeeShirt = {
   color:'blue',
   price:29,
+  title: 'Save My Trees',
   inCart: false,
 }
 
 var orangeTeeShirt = {
   color:'orange',
   price:39,
+  title: 'Forrest Walk',
   inCart: false,
 }
 
@@ -62,6 +67,15 @@ function addToCart(color,price){
   cart3.className = 'subbox';
   orangeTeeShirt.inCart = false;  
   }
+
+  var cartHTML = "";
+
+  cart.forEach(function(teeShirt){
+  	var itemString = "<h3>"+teeShirt.title+"<span class='price'>$"+teeShirt.price+"</span></h3>";
+  	cartHTML += itemString;});
+
+  activeItem.innerHTML = cartHTML;
+
  document.getElementById("subtotalBox").innerHTML = getSubTotal();
  document.getElementById('totalinput').innerHTML = getTotal();
 }
