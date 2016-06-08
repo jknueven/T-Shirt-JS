@@ -318,20 +318,11 @@ body {
 
 .containerCart {
 	width:55%;
-	height:200px;
+	height:40%;
 	margin-left: 55px;
 	margin-bottom:10px;
 	border: 2px solid $primaryColor;
 	border-radius: 5px 5px 5px 5px;
-}
-
-.selImage {
-	margin-top:50px;
-	margin-left: 10px;
-	border-radius: 5px;
-	width:200px;
-	height:200px;
-	border:2px solid $primaryColor;
 }
 
 .named, .numbers {
@@ -340,8 +331,13 @@ body {
 }
 
  .ItemSub, .Tax, .Total {
-	height:30%;
+	height:63px;
 	border-bottom: 2px solid $primaryColor;
+	vertical-align:bottom;
+}
+
+.Total {
+	border-bottom:none;
 }
 
 .Tax, .Total h1 {
@@ -363,10 +359,20 @@ body {
 	width: 30%;
 	height:90%;
 	margin-top:10px;
+
+	h1 {
+	display: block;
+    text-align: right;
+    width: 100%;
+	}
 }
 
-span .price {
-	font-size: 12px;
+.activeItem {
+	padding:5px;
+}
+
+span.price {
+	font-size: 18px;
 	color:$primaryColor;
-	float:right;
+	text-align:right;
 }

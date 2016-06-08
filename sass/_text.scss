@@ -20,7 +20,15 @@ h2 {
 h3 {
 	font-family: arial, sans-serif;
 	font-weight:bold;
-	font-size: 16px;
+	font-size: 14px;
+	text-align:center; 
+	display: inline-block;
+	color: $primaryColor;
+}
+
+h4 {
+	font-family: arial, sans-serif;
+	font-size: 8px;
 	text-align:center; 
 	display: inline-block;
 	color: $primaryColor;

@@ -15,6 +15,7 @@ var pinkTeeShirt = {
   price:19,
   title: 'Nature Lover',
   inCart: false,
+  dateAddedToCart: null,
 }
 
 var blueTeeShirt = {
@@ -22,6 +23,7 @@ var blueTeeShirt = {
   price:29,
   title: 'Save My Trees',
   inCart: false,
+  dateAddedToCart: null,
 }
 
 var orangeTeeShirt = {
@@ -29,6 +31,7 @@ var orangeTeeShirt = {
   price:39,
   title: 'Forrest Walk',
   inCart: false,
+  dateAddedToCart: null,
 }
 
 var cart = [];
@@ -37,7 +40,8 @@ function addToCart(color,price){
   if (color === 'blue' && blueTeeShirt.inCart === false){
   cart.push(blueTeeShirt);
   cart1.className = 'active subbox';
-  blueTeeShirt.inCart = true;  
+  blueTeeShirt.inCart = true; 
+  blueTeeShirt.dateAddedToCart = Date();
   }
   else if (color === 'blue' && blueTeeShirt.inCart === true){
   var arrayLocation = cart.indexOf(blueTeeShirt);
@@ -49,6 +53,7 @@ function addToCart(color,price){
   cart.push(pinkTeeShirt);
   cart2.className = 'active subbox';
   pinkTeeShirt.inCart = true;
+  pinkTeeShirt.dateAddedToCart = Date();
   }
   else if (color === 'pink' && pinkTeeShirt.inCart === true){
   var arrayLocation = cart.indexOf(pinkTeeShirt);
@@ -60,6 +65,7 @@ function addToCart(color,price){
   cart.push(orangeTeeShirt);
   cart3.className = 'active subbox';
   orangeTeeShirt.inCart = true;
+  orangeTeeShirt.dateAddedToCart = Date();
   }
   else if (color === 'orange' && orangeTeeShirt.inCart === true){
   var arrayLocation = cart.indexOf(orangeTeeShirt);
@@ -71,8 +77,9 @@ function addToCart(color,price){
   var cartHTML = "";
 
   cart.forEach(function(teeShirt){
-  	var itemString = "<h3>"+teeShirt.title+"<span class='price'>$"+teeShirt.price+"</span></h3>";
-  	cartHTML += itemString;});
+  	var itemString = "<h3>"+teeShirt.title+"</h3><span class='price'>  $"+teeShirt.price+"</span><br><h4>"+teeShirt.dateAddedToCart+"</h4>";
+  	cartHTML += itemString;
+  	});
 
   activeItem.innerHTML = cartHTML;
 
