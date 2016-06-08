@@ -332,6 +332,10 @@ body {
 
 .activeItem {
   padding: 5px; }
+  .activeItem i {
+    color: #7FBBE8;
+    font-size: 20px;
+    cursor: pointer; }
 
 span.price {
   font-size: 18px;

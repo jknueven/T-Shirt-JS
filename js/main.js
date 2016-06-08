@@ -74,18 +74,45 @@ function addToCart(color,price){
   orangeTeeShirt.inCart = false;  
   }
 
-  var cartHTML = "";
 
-  cart.forEach(function(teeShirt){
-  	var itemString = "<h3>"+teeShirt.title+"</h3><span class='price'>  $"+teeShirt.price+"</span><br><h4>"+teeShirt.dateAddedToCart+"</h4>";
-  	cartHTML += itemString;
-  	});
-
-  activeItem.innerHTML = cartHTML;
-
+  
+ document.getElementById("activeItem").innerHTML = buildHtml();
  document.getElementById("subtotalBox").innerHTML = getSubTotal();
  document.getElementById('totalinput').innerHTML = getTotal();
 }
+
+function removeFromCart(color){
+  	if (color == 'blue'){
+  		blueTeeShirt.inCart = false;
+  		var arrayLocation = cart.indexOf(blueTeeShirt);
+  		cart.splice(arrayLocation,1);
+  		document.getElementById("activeItem").innerHTML = buildHtml();
+  	}
+  	else if (color == 'pink'){
+  		pinkTeeShirt.inCart = false;
+  		var arrayLocation = cart.indexOf(pinkTeeShirt);
+  		cart.splice(arrayLocation,1);
+  		document.getElementById("activeItem").innerHTML = buildHtml();
+  	}
+  	else if (color == 'orange'){
+  		orangeTeeShirt.inCart = false;
+  		var arrayLocation = cart.indexOf(orangeTeeShirt);
+  		cart.splice(arrayLocation,1);
+  		document.getElementById("activeItem").innerHTML = buildHtml();
+  	}
+  	document.getElementById("subtotalBox").innerHTML = getSubTotal();
+ 	document.getElementById('totalinput').innerHTML = getTotal();
+  }
+
+  function buildHtml(){
+  var cartHTML = ""; 
+  cart.forEach(function(teeShirt){
+  	var itemString = "<i onClick='removeFromCart(\""+teeShirt.color+"\")' class='fa fa-times'></i>  <h3>"+teeShirt.title+"</h3><span class='price'>  $"+teeShirt.price+"</span><br><h4>"+teeShirt.dateAddedToCart+"</h4>";
+  	cartHTML += itemString;
+  	});
+
+  	return cartHTML;
+   }
 
 function getSubTotal(){
   var subTotal = 0;

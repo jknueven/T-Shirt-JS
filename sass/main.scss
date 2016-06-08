@@ -369,6 +369,12 @@ body {
 
 .activeItem {
 	padding:5px;
+
+	i {
+	color: $primaryColor;
+	font-size: 20px;
+	cursor:pointer;
+	}
 }
 
 span.price {
