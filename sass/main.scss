@@ -103,7 +103,7 @@ body {
     vertical-align: center;
     display: inline-block;
     background: none;
-    margin-top: 6px; 
+    margin-top: 7px; 
     margin-left: 19px;
 }
 
@@ -175,8 +175,9 @@ body {
     background-color: white;
     border: 2px solid $primaryColor;
     border-bottom: none;
-    min-width: 50px;
+    min-width: 72px;
     top: -196px;
+    left:-2px;
 
     li {
     	list-style: none;
@@ -261,9 +262,10 @@ body {
 }
 
 .dropdown_content.boxesdropdwn {
-	top:-83px;
-	width: 103%;
-	position: relative;
+	top:-51px;
+	left:-2px;
+	width: 106%;
+	position: absolute;
 }
 
 .dropdown_content.boxesdropdwn {

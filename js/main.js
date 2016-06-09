@@ -105,9 +105,9 @@ function removeFromCart(color){
   	}
   	document.getElementById("subtotalBox").innerHTML = getSubTotal();
  	document.getElementById('totalinput').innerHTML = getTotal();
-  }
+}
 
- function buildHtml(){
+function buildHtml(){
   var cartHTML = ""; 
   cart.forEach(function(teeShirt){
   	var itemString = "<i onClick='removeFromCart(\""+teeShirt.color+"\")' class='fa fa-times'></i>  <h3>"+teeShirt.title+"</h3><span class='price'>  $"+teeShirt.price+"</span><br><h4>"+teeShirt.dateAddedToCart+"</h4>";
@@ -132,6 +132,8 @@ function getTotal(){
   Total= subTotal * 0.065 + subTotal;
   return Total; 
 }
+
+//old onClick that changed the button to on/off css
 
 // cart1.addEventListener("click",function(){
 //   if(blueTeeShirt.inCart == false)
