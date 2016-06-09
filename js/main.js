@@ -86,25 +86,28 @@ function removeFromCart(color){
   		blueTeeShirt.inCart = false;
   		var arrayLocation = cart.indexOf(blueTeeShirt);
   		cart.splice(arrayLocation,1);
+  		cart1.className = 'subbox';
   		document.getElementById("activeItem").innerHTML = buildHtml();
   	}
   	else if (color == 'pink'){
   		pinkTeeShirt.inCart = false;
   		var arrayLocation = cart.indexOf(pinkTeeShirt);
   		cart.splice(arrayLocation,1);
+  		cart2.className = 'subbox';
   		document.getElementById("activeItem").innerHTML = buildHtml();
   	}
   	else if (color == 'orange'){
   		orangeTeeShirt.inCart = false;
   		var arrayLocation = cart.indexOf(orangeTeeShirt);
   		cart.splice(arrayLocation,1);
+  		cart3.className = 'subbox';
   		document.getElementById("activeItem").innerHTML = buildHtml();
   	}
   	document.getElementById("subtotalBox").innerHTML = getSubTotal();
  	document.getElementById('totalinput').innerHTML = getTotal();
   }
 
-  function buildHtml(){
+ function buildHtml(){
   var cartHTML = ""; 
   cart.forEach(function(teeShirt){
   	var itemString = "<i onClick='removeFromCart(\""+teeShirt.color+"\")' class='fa fa-times'></i>  <h3>"+teeShirt.title+"</h3><span class='price'>  $"+teeShirt.price+"</span><br><h4>"+teeShirt.dateAddedToCart+"</h4>";
